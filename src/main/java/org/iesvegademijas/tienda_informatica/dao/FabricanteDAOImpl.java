@@ -75,7 +75,7 @@ public class FabricanteDAOImpl  implements FabricanteDAO{
 		
 		int rows = jdbcTemplate.update("DELETE FROM fabricante WHERE codigo = ?", id);
 		
-		if (rows == 0) System.out.println("Update de fabricante con 0 registros actualizados.");		
+		if (rows == 0) System.out.println("Delete de fabricante con 0 registros actualizados.");
 		
 	}
 
