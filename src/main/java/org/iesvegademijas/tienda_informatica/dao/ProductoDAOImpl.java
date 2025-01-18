@@ -81,4 +81,20 @@ public class ProductoDAOImpl implements ProductoDAO {
 
         if (rows == 0) System.out.println("Delete de producto con 0 registros actualizados.");
     }
+
+    @Override
+    public List<Producto> getProdsByFabID(int codigo) {
+
+        List<Producto> listProd = jdbcTemplate.query("SELECT * FROM producto WHERE id_fabricante = ? ",
+                (rs, rowNum) ->
+                        new Producto(
+                                rs.getInt("codigo"),
+                                rs.getString("nombre"),
+                                rs.getDouble("precio"),
+                                rs.getInt("id_fabricante")
+                        ), codigo
+        );
+
+        return listProd;
+    }
 }

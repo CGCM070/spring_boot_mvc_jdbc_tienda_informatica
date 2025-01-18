@@ -16,4 +16,6 @@ public interface ProductoDAO {
     public void update(Producto producto);
 
     public void delete(int codigo);
+
+    public List<Producto> getProdsByFabID(int codigo);
 }
