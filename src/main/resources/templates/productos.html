@@ -26,7 +26,7 @@
         <div class="basis-1/2 text-2xl">Código</div>
         <div class="basis-1/2 text-2xl">Nombre</div>
         <div class="basis-1/2 text-2xl">Precio</div>
-        <div class="basis-1/2 text-2xl">Id_Fabricante</div>
+        <div class="basis-1/2 text-2xl">Fabricante</div>
         <div class="basis-1/2 text-center text-2xl">Acción</div>
     </div>
     <div class="flex flex-row  my-0.5" th:each="producto : ${listaProds}">
@@ -34,7 +34,14 @@
         <div class="basis-1/3" th:text="${producto.codigo}">Código</div>
         <div class="basis-1/3" th:text="${producto.nombre}">Nombre</div>
         <div class="basis-1/3" th:text="${producto.precio}">Precio</div>
-        <div class="basis-1/3" th:text="${producto.id_fabricante}">id_fabricante</div>
+<!--        <div class="basis-1/3" th:text="${producto.id_fabricante}">fabricante</div>-->
+        <div class="text-xl basis-1/3"
+
+                th:each="fabricante : ${listaFab}"
+                th:if="${fabricante.codigo == producto.id_fabricante}"
+                th:text="${fabricante.nombre}">Fabricante
+
+        </div>
 
         <div class=" flex justify-center">
             <form  th:action="@{/productos/__${producto.codigo}__}">

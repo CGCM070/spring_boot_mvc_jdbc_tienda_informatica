@@ -29,7 +29,10 @@ public class FabricanteController {
 		
 		List<Fabricante> listAllFab =  fabricanteService.listAll();
 		model.addAttribute("listaFabricantes", listAllFab);
-				
+
+		List<Fabricante> listaFab = fabricanteService.listAll();
+		model.addAttribute("listaFab", listaFab);
+
 		return "fabricantes";
 		
 	}

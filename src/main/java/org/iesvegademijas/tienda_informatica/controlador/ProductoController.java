@@ -32,6 +32,9 @@ public class ProductoController {
         List<Producto> listaProds = productoService.listAll();
         model.addAttribute("listaProds", listaProds);
 
+        List<Fabricante> listaFab = fabricanteService.listAll();
+        model.addAttribute("listaFab", listaFab);
+
         return "productos";
     }
 
