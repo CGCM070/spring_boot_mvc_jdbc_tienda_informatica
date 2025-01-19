@@ -68,9 +68,8 @@ public class ProductoDAOImpl implements ProductoDAO {
     @Override
     public void update(Producto producto) {
 
-
-        int rows = jdbcTemplate.update("UPDATE producto SET nombre = ? , precio = ? WHERE codigo = ? "
-                , producto.getNombre(), producto.getPrecio(), producto.getCodigo());
+        int rows = jdbcTemplate.update("UPDATE producto SET nombre = ? , precio = ?, id_fabricante = ?  WHERE codigo = ? "
+                , producto.getNombre(), producto.getPrecio(),producto.getId_fabricante(), producto.getCodigo());
 
         if (rows == 0) System.out.println("Update de producto con 0 registros actualizados.");
     }

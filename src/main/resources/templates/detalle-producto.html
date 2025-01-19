@@ -39,6 +39,16 @@
             <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:value="${producto.precio}" value="Fabricante" readonly="readonly"/>
         </div>
     </div>
+
+    <div class="flex flex-row my-0.5">
+        <div class="basis-1/2">
+            <label>Fabricante</label>
+        </div>
+        <div class="basis-1/2" th:object="${optFab}">
+            <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:value="${optFab.nombre}" value="Fabricante" readonly="readonly"/>
+        </div>
+    </div>
+
     <div class="flex flex-row my-0.5">
         <div class="basis-1/2">
             <label>Id_Fabricante</label>
@@ -47,6 +57,8 @@
             <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:value="${producto.id_fabricante}" value="Fabricante" readonly="readonly"/>
         </div>
     </div>
+
+
 </div>
 </body>
 </html>

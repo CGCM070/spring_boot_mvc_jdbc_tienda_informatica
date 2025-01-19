@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class FabricanteDAOImpl  implements FabricanteDAO{
 
-	 @Autowired
+	@Autowired
 	 private JdbcTemplate jdbcTemplate;
 	
 	/**

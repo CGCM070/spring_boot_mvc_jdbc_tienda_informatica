@@ -30,6 +30,9 @@
                 <div class="basis-1/2">
                     <label>Precio</label>
                 </div>
+                <div class="basis-1/2">
+                     <label >Fabricante:</label>
+                </div>
             </div>
 
             <div class="basis-1/2">
@@ -39,7 +42,21 @@
                 <div class="basis-1/2">
                     <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight" th:field="*{precio}"/>
                 </div>
+
+                <div class="basis-1/2">
+                    <select id="idFabricante" th:field="*{id_fabricante}">
+
+                        <option th:each="fabricante : ${listaFab}"
+
+                                th:value="${fabricante.codigo}"
+                                th:text="${fabricante.nombre}">
+
+                        </option>
+                    </select>
+                </div>
+
             </div>
+
         </div>
 
     </form>

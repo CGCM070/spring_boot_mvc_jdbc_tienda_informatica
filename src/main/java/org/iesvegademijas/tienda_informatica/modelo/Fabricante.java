@@ -15,6 +15,8 @@ public class Fabricante {
 		this.nombre = nombre;
 	}
 
+
+
 	public String getNombre() {
 		return nombre;
 	}

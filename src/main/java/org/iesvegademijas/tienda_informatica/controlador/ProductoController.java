@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class ProductoController {
@@ -55,10 +56,12 @@ public class ProductoController {
 
     }
 
-    @GetMapping("/productos/editar/{codigo}")
-    public String editar(Model model, @PathVariable Integer codigo) {
+    @GetMapping("/productos/editar/{id}")
+    public String editar(Model model, @PathVariable Integer id) {
 
-     Producto producto = productoService.findOnebyID(codigo);
+     Producto producto = productoService.findOnebyID(id);
+        List<Fabricante>listaFab = fabricanteService.listAll();
+        model.addAttribute("listaFab", listaFab);
         model.addAttribute("producto", producto);
 
         return "editar-producto";
@@ -88,7 +91,11 @@ public class ProductoController {
     public String detalle(Model model, @PathVariable Integer codigo ) {
 
         Producto producto = productoService.findOnebyID(codigo);
+
+        Fabricante optFab = fabricanteService.one(producto.getId_fabricante());
+
         model.addAttribute("producto", producto);
+        model.addAttribute("optFab",optFab);
 
         return "detalle-producto";
 

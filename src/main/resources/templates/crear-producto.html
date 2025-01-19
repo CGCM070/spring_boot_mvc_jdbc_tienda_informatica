@@ -30,7 +30,13 @@
         <div>
             <label for="idFabricante">Fabricante:</label>
             <select id="idFabricante" th:field="*{id_fabricante}">
-                <option th:each="fabricante : ${listaFab}" th:value="${fabricante.codigo}" th:text="${fabricante.nombre}"></option>
+
+                <option th:each="fabricante : ${listaFab}"
+
+                        th:value="${fabricante.codigo}"
+                        th:text="${fabricante.nombre}">
+
+                </option>
             </select>
         </div>
     </form>
