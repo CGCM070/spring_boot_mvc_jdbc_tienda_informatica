@@ -28,8 +28,10 @@ public class ProductoController {
 
     @GetMapping("/productos")
     public String listar (Model model) {
+
         List<Producto> listaProds = productoService.listAll();
         model.addAttribute("listaProds", listaProds);
+
         return "productos";
     }
 
