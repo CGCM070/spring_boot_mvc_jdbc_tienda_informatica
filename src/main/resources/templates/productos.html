@@ -45,7 +45,7 @@
 
         <div class=" flex justify-center">
             <form  th:action="@{/productos/__${producto.codigo}__}">
-                <button class="mx-0.5 w-2 btn btn-green">Detalle</button>
+                <button class="mx-0.5 btn btn-green">Detalle</button>
             </form>
             <form th:action="@{/productos/editar/__${producto.codigo}__}" method="get"> <!--Formularios por defecto usan method get -->
                 <button class=" mx-0.5 btn btn-blue">Editar</button>
